@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextViewDelegate {
+class TextViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var theScrollView: UIScrollView!
     
@@ -24,14 +24,6 @@ class ViewController: UIViewController, UITextViewDelegate {
         
         let titleAttributes = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline), NSForegroundColorAttributeName: UIColor.purpleColor(), NSParagraphStyleAttributeName: paraStyle]
         
-
-        
-        // Apply paragraph styles to paragraph
-//        para.addAttribute(NSParagraphStyleAttributeName, value: paraStyle, range: NSRange(location: 0,length: para.length))
-        
-        
-//        let titleString = NSAttributedString(string: "Read all about it!", attributes: titleAttributes)
-
         let fileLocation = NSBundle.mainBundle().pathForResource("text", ofType: "txt")!
         let text : String
         do
@@ -51,12 +43,12 @@ class ViewController: UIViewController, UITextViewDelegate {
         var i = 0
         while true {
             let width = CGFloat(Int(self.view.frame.size.width) * i)
-            let textContainer = NSTextContainer(size: CGSizeMake(self.view.frame.size.width, self.view.frame.size.height - 20))
+            let textContainer = NSTextContainer(size: CGSizeMake(self.view.frame.size.width, self.view.frame.size.height - 20-64))
             layoutManager.addTextContainer(textContainer)
             
-            let theTextView = UITextView(frame: CGRectMake(width, 0, self.view.frame.size.width, self.view.frame.size.height), textContainer: textContainer)
+            let theTextView = UITextView(frame: CGRectMake(width, 0, self.view.frame.size.width, self.view.frame.size.height-64), textContainer: textContainer)
             theTextView.delegate = self
-//            theTextView.editable = true
+            theTextView.editable = true
             self.theScrollView.addSubview(theTextView)
             i++
             
@@ -67,15 +59,37 @@ class ViewController: UIViewController, UITextViewDelegate {
             
         }
         
-        self.theScrollView.contentSize = CGSizeMake(self.view.frame.size.width * CGFloat(i), self.view.frame.size.height)
+        self.theScrollView.contentSize = CGSizeMake(self.view.frame.size.width * CGFloat(i), self.view.frame.size.height-64)
 
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+//    // Mark: - helper
+//    // format text attribute
+//    func formatTextAttribute(initialString: String) -> NSMutableAttributedString {
+//
+//        let attributeString = NSMutableAttributedString(string: initialString)
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.lineSpacing = 5
+//        paragraphStyle.firstLineHeadIndent = 10
+//        
+//        attributeString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, initialString.characters.count))
+//        
+//        
+//        return attributeString
+//
+//    }
 
+    // Mark: - UITextViewDelegate
+    func textViewShouldBeginEditing(textView: UITextView) -> Bool {
+        return true
+    }
+    func textViewDidChange(textView: UITextView) {
+        
+    }
     
     // Mark: - scroll view delegate
     func scrollViewDidScroll(scrollView: UIScrollView) {
