@@ -12,6 +12,7 @@
 		3E49F8F91C7D3CA400B503B5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E49F8F71C7D3CA400B503B5 /* Main.storyboard */; };
 		3E49F8FB1C7D3CA400B503B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E49F8FA1C7D3CA400B503B5 /* Assets.xcassets */; };
 		3E49F8FE1C7D3CA400B503B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E49F8FC1C7D3CA400B503B5 /* LaunchScreen.storyboard */; };
+		3E49F9061C7D71E700B503B5 /* text.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3E49F9051C7D71E700B503B5 /* text.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		3E49F8FA1C7D3CA400B503B5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E49F8FD1C7D3CA400B503B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E49F8FF1C7D3CA400B503B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3E49F9051C7D71E700B503B5 /* text.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = text.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				3E49F8F31C7D3CA400B503B5 /* AppDelegate.swift */,
 				3E49F8F51C7D3CA400B503B5 /* ViewController.swift */,
+				3E49F9051C7D71E700B503B5 /* text.txt */,
 				3E49F8F71C7D3CA400B503B5 /* Main.storyboard */,
 				3E49F8FA1C7D3CA400B503B5 /* Assets.xcassets */,
 				3E49F8FC1C7D3CA400B503B5 /* LaunchScreen.storyboard */,
@@ -125,6 +128,7 @@
 				3E49F8FE1C7D3CA400B503B5 /* LaunchScreen.storyboard in Resources */,
 				3E49F8FB1C7D3CA400B503B5 /* Assets.xcassets in Resources */,
 				3E49F8F91C7D3CA400B503B5 /* Main.storyboard in Resources */,
+				3E49F9061C7D71E700B503B5 /* text.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
