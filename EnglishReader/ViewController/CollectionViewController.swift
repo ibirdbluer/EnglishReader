@@ -8,8 +8,11 @@
 
 import UIKit
 
-class CollectionViewController: UIViewController {
+class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    
+    // MARK: - Life Circle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +24,25 @@ class CollectionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    private let reuseIdentifier = "cell"
+    
+    // MARK: - UICollectionViewDataSource
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        
+        
+        return cell
+    }
+    
+    
+    
+    // MARK: - UICollectionViewDelegate
 
     /*
     // MARK: - Navigation

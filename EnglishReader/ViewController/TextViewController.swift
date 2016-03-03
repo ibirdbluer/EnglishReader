@@ -24,18 +24,11 @@ class TextViewController: UIViewController, UITextViewDelegate {
         
         let titleAttributes = [NSFontAttributeName: UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline), NSForegroundColorAttributeName: UIColor.purpleColor(), NSParagraphStyleAttributeName: paraStyle]
         
-        let fileLocation = NSBundle.mainBundle().pathForResource("text", ofType: "txt")!
-        let text : String
-        do
-        {
-            text = try String(contentsOfFile: fileLocation)
-        }
-        catch
-        {
-            text = ""
-        }
+        // get text content
+        let textModel = TextModel()
+        let text = textModel.readTextFromLocalTxtFile()
         
-        
+        // text container
         let storage = NSTextStorage(string: text, attributes: titleAttributes)
         let layoutManager = NSLayoutManager()
         storage.addLayoutManager(layoutManager)
