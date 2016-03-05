@@ -10,9 +10,13 @@ import Foundation
 
 class TextModel {
     
-    let text: String?
+    var text: String?
     
-   
+    init() {
+        
+        self.text = self.readTextFromLocalTxtFile()
+        
+    }
     
     // read data
     func readTextFromLocalTxtFile() -> String{
@@ -31,7 +35,10 @@ class TextModel {
     }
     
     // deal with data for collection view controller
-    
+    func separateContentToWordArray() -> [String] {
+        let wordArray = self.text?.componentsSeparatedByString(" ")
+        return wordArray!
+    }
     
     
 }

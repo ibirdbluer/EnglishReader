@@ -8,15 +8,21 @@
 
 import UIKit
 
-class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class CollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     
     // MARK: - Life Circle
+    var wordArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let textModel = TextModel()
+        wordArray = textModel.separateContentToWordArray()
+        
+//        print("\(wordArray)")
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,20 +30,39 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         // Dispose of any resources that can be recreated.
     }
     
-    private let reuseIdentifier = "cell"
+    private let reuseIdentifier = "WordCell"
     
     // MARK: - UICollectionViewDataSource
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return wordArray.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! WordCell
         
+        cell.contentLabel.text = wordArray[indexPath.row]
+        
+        cell.contentLabel.sizeToFit()
         
         return cell
+    }
+    
+    // MARK: - UICollectionViewDelegateFlowLayout
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+
+        let caculaterLabel = UILabel()
+        caculaterLabel.text = wordArray[indexPath.row]
+        
+        caculaterLabel.sizeToFit()
+        
+        let size = CGSize(width: caculaterLabel.frame.size.width + 20, height: caculaterLabel.frame.size.height + 20)
+        
+        return size
     }
     
     
