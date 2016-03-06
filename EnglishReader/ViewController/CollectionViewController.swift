@@ -12,7 +12,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
 
     
     // MARK: - Life Circle
-    var wordArray = [String]()
+    var wordArray = [TextObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +45,35 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! WordCell
         
-        cell.contentLabel.text = wordArray[indexPath.row]
+        var wordObject = wordArray[indexPath.row]
+        cell.contentLabel.attributedText = wordObject.content
+        cell.textObject = wordObject
         
-        cell.contentLabel.sizeToFit()
+        
+        if let translateString = wordObject.dictionary where (wordObject.didAdd != true){
+            wordObject.didAdd = true
+            wordArray[indexPath.row] = wordObject
+
+//            let image = TranslateImage()
+//            image.imageFromString(translateString, attributes: nil, rect: cell.translateImage.frame)
+            let imageModel = TextModel()
+            let image = imageModel.imageFromString(translateString, attributes: nil, rect: cell.frame)
+            let imageView = UIImageView(frame: cell.frame)
+            imageView.image  = image
+            imageView.contentMode = .Center
+            collectionView.addSubview(imageView)
+            
+//            cell.translateImage.image = self.imageFromString(translateString, attributes: nil, rect: cell.translateImage.frame)
+//            cell.translateImage.contentMode = .Center
+
+//            let rect = cell.frame
+//            
+//            let translateLabel = UILabel(frame: rect)
+//            translateLabel.backgroundColor = UIColor.redColor()
+//            translateLabel.text = translateString
+//            collectionView.addSubview(translateLabel)
+//            print("------------------\(rect)")
+        }
         
         return cell
     }
@@ -56,7 +82,7 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 
         let caculaterLabel = UILabel()
-        caculaterLabel.text = wordArray[indexPath.row]
+        caculaterLabel.attributedText = wordArray[indexPath.row].content
         
         caculaterLabel.sizeToFit()
         
@@ -68,6 +94,9 @@ class CollectionViewController: UIViewController, UICollectionViewDelegate, UICo
     
     
     // MARK: - UICollectionViewDelegate
+
+    
+    // MARK: - Helper
 
     /*
     // MARK: - Navigation

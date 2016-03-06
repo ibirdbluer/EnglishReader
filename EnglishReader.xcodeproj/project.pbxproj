@@ -16,6 +16,8 @@
 		4FF10AD71C888E86001FF5DB /* text.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4FF10AD61C888E86001FF5DB /* text.txt */; };
 		4FF10AD91C889067001FF5DB /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF10AD81C889067001FF5DB /* TextModel.swift */; };
 		4FF10ADB1C8ABE74001FF5DB /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF10ADA1C8ABE74001FF5DB /* WordCell.swift */; };
+		4FF10AE11C8B1F7B001FF5DB /* TextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF10AE01C8B1F7B001FF5DB /* TextObject.swift */; };
+		4FF10B211C8BD756001FF5DB /* TranslateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF10B201C8BD756001FF5DB /* TranslateImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		4FF10AD61C888E86001FF5DB /* text.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = text.txt; sourceTree = "<group>"; };
 		4FF10AD81C889067001FF5DB /* TextModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
 		4FF10ADA1C8ABE74001FF5DB /* WordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
+		4FF10AE01C8B1F7B001FF5DB /* TextObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextObject.swift; sourceTree = "<group>"; };
+		4FF10B201C8BD756001FF5DB /* TranslateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslateImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 		3E49F8F21C7D3CA400B503B5 /* EnglishReader */ = {
 			isa = PBXGroup;
 			children = (
+				4FF10ADF1C8B1F0B001FF5DB /* Objects */,
 				4FF10AD51C888E86001FF5DB /* Resource */,
 				4FF10AD41C888E60001FF5DB /* Model */,
 				4FF10AD31C888E57001FF5DB /* View */,
@@ -106,6 +111,15 @@
 				4FF10AD61C888E86001FF5DB /* text.txt */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		4FF10ADF1C8B1F0B001FF5DB /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				4FF10AE01C8B1F7B001FF5DB /* TextObject.swift */,
+				4FF10B201C8BD756001FF5DB /* TranslateImage.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,11 +195,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FF10B211C8BD756001FF5DB /* TranslateImage.swift in Sources */,
 				4FF10AD91C889067001FF5DB /* TextModel.swift in Sources */,
 				4FF10AD21C888E49001FF5DB /* TextViewController.swift in Sources */,
 				4FF10ADB1C8ABE74001FF5DB /* WordCell.swift in Sources */,
 				4FF10AD11C888E49001FF5DB /* CollectionViewController.swift in Sources */,
 				3E49F8F41C7D3CA400B503B5 /* AppDelegate.swift in Sources */,
+				4FF10AE11C8B1F7B001FF5DB /* TextObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

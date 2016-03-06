@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
@@ -115,22 +117,30 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPd-ph-v0H">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <rect key="frame" x="0.0" y="25" width="50" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sak-f0-HlS">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="qPd-ph-v0H" firstAttribute="width" secondItem="XBi-cq-ilD" secondAttribute="width" id="0YS-wq-icU"/>
-                                            <constraint firstItem="qPd-ph-v0H" firstAttribute="centerY" secondItem="XBi-cq-ilD" secondAttribute="centerY" id="G2e-AP-WEm"/>
-                                            <constraint firstItem="qPd-ph-v0H" firstAttribute="centerX" secondItem="XBi-cq-ilD" secondAttribute="centerX" id="d4M-15-jTq"/>
-                                            <constraint firstItem="qPd-ph-v0H" firstAttribute="height" secondItem="XBi-cq-ilD" secondAttribute="height" id="kcQ-Q0-Wmc"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="qPd-ph-v0H" secondAttribute="bottom" constant="-8" id="48O-jT-05V"/>
+                                            <constraint firstItem="sak-f0-HlS" firstAttribute="top" secondItem="XBi-cq-ilD" secondAttribute="top" id="BNm-Zo-o87"/>
+                                            <constraint firstItem="sak-f0-HlS" firstAttribute="centerX" secondItem="XBi-cq-ilD" secondAttribute="centerX" id="FzX-tb-bhK"/>
+                                            <constraint firstItem="sak-f0-HlS" firstAttribute="height" secondItem="XBi-cq-ilD" secondAttribute="height" id="GMb-VS-JdC"/>
+                                            <constraint firstItem="sak-f0-HlS" firstAttribute="width" secondItem="XBi-cq-ilD" secondAttribute="width" id="Lpf-Da-7oL"/>
+                                            <constraint firstItem="qPd-ph-v0H" firstAttribute="height" secondItem="XBi-cq-ilD" secondAttribute="height" multiplier="0.5" id="T1k-N5-OKS"/>
+                                            <constraint firstItem="qPd-ph-v0H" firstAttribute="width" secondItem="XBi-cq-ilD" secondAttribute="width" id="j7L-sI-Wxd"/>
+                                            <constraint firstItem="qPd-ph-v0H" firstAttribute="centerX" secondItem="XBi-cq-ilD" secondAttribute="centerX" id="wut-hP-Wpl"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="contentLabel" destination="qPd-ph-v0H" id="5n9-sH-68s"/>
+                                            <outlet property="translateImage" destination="sak-f0-HlS" id="yW6-lP-Ryq"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

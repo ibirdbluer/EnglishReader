@@ -60,22 +60,6 @@ class TextViewController: UIViewController, UITextViewDelegate {
         super.didReceiveMemoryWarning()
     }
     
-//    // Mark: - helper
-//    // format text attribute
-//    func formatTextAttribute(initialString: String) -> NSMutableAttributedString {
-//
-//        let attributeString = NSMutableAttributedString(string: initialString)
-//        let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.lineSpacing = 5
-//        paragraphStyle.firstLineHeadIndent = 10
-//        
-//        attributeString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, initialString.characters.count))
-//        
-//        
-//        return attributeString
-//
-//    }
-
     // Mark: - UITextViewDelegate
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {
         return true
